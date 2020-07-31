@@ -1,0 +1,91 @@
+#top_section {
+  background-color: rgba(1,70,249,0.77);
+}
+
+#display {
+  background: white;
+  height: 300px;
+  border-radius: 52%;
+  width: 300px;
+  display: flex;
+  border: 8px green solid;
+}
+
+#total_value {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#income_container {
+  background-color: rgba(137,211,235,0.75);
+}
+
+#expense_container {
+}
+
+.row.income_item {
+  background-color: rgba(222,219,219,0.5);
+  margin: 16px;
+  padding: 13px;
+  border-radius: 10px;
+}
+
+.row.expense_item {
+  background-color: rgba(222,219,219,0.5);
+  margin: 16px;
+  padding: 13px;
+  border-radius: 10px;
+}
+
+.row.income_item {
+}
+
+income {
+}
+
+#inpu_desc {
+  width: 50%;
+}
+
+#input_num {
+  width: 14%;
+}
+
+#display {
+}
+
+select {
+  height: 40px;
+}
+
+#input_desc {
+  height: 40px;
+}
+
+#input_num {
+  height: 40px;
+}
+
+#input_box {
+  padding: 23px;
+  /*border: solid white;*/
+  border-radius: 10px;
+  margin-top: 39px;
+}
+
+#display h1 {
+  font-size: 6vw;
+}
+
+.icon.ion-ios-minus-outline:hover {
+  color: red;
+}
+
+#bottom_section {
+  min-height: 600px;
+}
+
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+}
+

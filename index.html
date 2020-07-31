@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Budget</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div id="budget_app">
+        <section id="top_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div id="input_box" v-on:keypress.enter = "addItem">
+                            <h1 class="text-light p-4"><span class="mr-3">December:</span>Budget</h1>
+                            <div class="row">
+                                <div class="col flex-column">
+                                    <div class="form-group">
+                                        <select v-model="type">
+                                            <option value="inc" selected="">+</option>
+                                            <option value="exp">-</option>
+                                        </select>
+                                        <input v-model="description"  type="text" id="input_desc" class="ml-2 mr-2">
+                                        <input v-model="value" class="form-control-sm" type="number" id="input_num">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" >
+                                <div class="col d-flex">
+                                    
+                                    <button class="btn btn-primary d-block" v-on:click="addItem" type="button" style="background-color: rgb(162,163,184);">Add Item</button>
+
+
+                                    <button class="btn btn-primary d-block m-auto" type="button" style="background-color: rgb(162,163,184);">See Totals</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col p-4">
+                        <div id="display" class="m-auto p-5">
+                            <h1 id="total_value" class="text-center">${{budgetTotal}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bottom_section">
+            <div class="container-fluid">
+                <div class="row" style="min-height: 600px;">
+                    <div class="col-6" id="income_container">
+                        <div class="row">
+                            <div class="col pt-4">
+                                <h1 class="text-center">Income</h1>
+                            </div>
+                        </div>
+
+                        <div v-for="item in incomeItems" class="row income_item" style="background-color: rgba(222,219,219,0.91);">
+                            <div class="col-7">
+                                <h3><i class="icon ion-ios-minus-outline pr-4"></i>{{item.description}}</h3>
+                            </div>
+                            <div class="col">
+                                <h3>+ {{item.value}}</h3>
+                                <div></div>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="col-6 pt-4" id="expense_container" style="background-color: #ff8e8e;">
+                        <h1 class="text-center">Expense</h1>
+
+                        <div v-for="item in expenseItems" class="row expense_item">
+                            <div class="col-7">
+                                <h3><i class="icon ion-ios-minus-outline pr-4"></i>{{item.description}}</h3>
+                            </div>
+                            <div class="col">
+                                <h3>- {{item.value}}</h3>
+                
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
